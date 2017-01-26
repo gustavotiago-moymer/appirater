@@ -680,20 +680,20 @@ static BOOL _alwaysUseMainBundle = NO;
 	switch (buttonIndex) {
 		case 0:
 		{
-			// they don't want to rate it
-			[userDefaults setBool:YES forKey:kAppiraterDeclinedToRate];
-			[userDefaults synchronize];
-			if(delegate && [delegate respondsToSelector:@selector(appiraterDidDeclineToRate:)]){
-				[delegate appiraterDidDeclineToRate:self];
+			// they want to rate it
+			[Appirater rateApp];
+			if(delegate&& [delegate respondsToSelector:@selector(appiraterDidOptToRate:)]){
+				[delegate appiraterDidOptToRate:self];
 			}
 			break;
 		}
 		case 1:
 		{
-			// they want to rate it
-			[Appirater rateApp];
-			if(delegate&& [delegate respondsToSelector:@selector(appiraterDidOptToRate:)]){
-				[delegate appiraterDidOptToRate:self];
+			// they don't want to rate it
+			[userDefaults setBool:YES forKey:kAppiraterDeclinedToRate];
+			[userDefaults synchronize];
+			if(delegate && [delegate respondsToSelector:@selector(appiraterDidDeclineToRate:)]){
+				[delegate appiraterDidDeclineToRate:self];
 			}
 			break;
 		}
