@@ -10,7 +10,7 @@
     "Arash Payan": "arash@ara.sh"
   },
   "source": {
-    "git": "https://github.com/gustavotiago-moymer/appirater.git",
+    "git": "https://github.com/gutiago/appirater.git",
     "tag": "2.1.0"
   },
   "source_files": "*.{h,m}",
